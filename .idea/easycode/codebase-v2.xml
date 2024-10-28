@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="com.obiscr.chatgpt.settings.EasyCodeState">
+    <option name="projectFiles" value="$PROJECT_DIR$/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/Basket.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/Category.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/FastFoodBot.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/InlineBtnData.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/Main.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/Order.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/Product.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/fastfoodbot/User.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/BotService.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/Main.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/src/main/java/uz/pdp/ReminderBot.java;C:/Users/MSI/IdeaProjects/g47-telegram-bot/g47-telegram-bot/pom.xml" />
+  </component>
+</project>

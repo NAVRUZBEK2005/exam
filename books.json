@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "name": "WORZAKON",
+    "authors": "UMAR VOR",
+    "genre": "ISHKAL",
+    "price": 125000.0,
+    "publishedDate": "2005"
+  },
+  {
+    "id": 3,
+    "name": "WORZAKON-3",
+    "authors": "UMAR VOR",
+    "genre": "ISHKAL",
+    "price": 125000.0,
+    "publishedDate": "2005"
+  }
+]
