@@ -136,7 +136,7 @@ public class BookBot extends TelegramLongPollingBot {
         }
 
         String jsonBooks = gson.toJson(books);
-        File jsonFile = new File("books_" + message.getChatId() + ".json"); // Foydalanuvchi ID bilan fayl nomi
+        File jsonFile = new File("books.json"); // Foydalanuvchi ID bilan fayl nomi
 
         try (FileWriter writer = new FileWriter(jsonFile)) {
             writer.write(jsonBooks);
