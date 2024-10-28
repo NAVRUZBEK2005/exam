@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
         try {
             TelegramBotsApi botsApi = new TelegramBotsApi(DefaultBotSession.class);
-            botsApi.registerBot(new BookBot());
+            String botToken = "7280055119:AAEOgJ2Pcqx5uRNLJKPgmoz0YiqUgXQNe1Q";
+            botsApi.registerBot(new BookBot(botToken));
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }

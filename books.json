@@ -1,18 +1,10 @@
 [
   {
     "id": 1,
-    "name": "WORZAKON",
-    "authors": "UMAR VOR",
-    "genre": "ISHKAL",
-    "price": 125000.0,
-    "publishedDate": "2005"
-  },
-  {
-    "id": 3,
-    "name": "WORZAKON-3",
-    "authors": "UMAR VOR",
-    "genre": "ISHKAL",
-    "price": 125000.0,
-    "publishedDate": "2005"
+    "name": "Kitob nomi",
+    "authors": "Muallif nomi",
+    "genre": "Janr",
+    "price": 10000.0,
+    "publishedDate": "2024-10-28"
   }
 ]

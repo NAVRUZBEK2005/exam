@@ -23,18 +23,19 @@ import java.util.List;
 public class BookBot extends TelegramLongPollingBot {
     private final List<Book> books = new ArrayList<>();
 
-    @Override
-    public String getBotUsername() {
-        return "Your_Bot_Username"; // Bot name
-    }
+    final static String ADD_COMMAND = "/add";
+    final static String LIST_COMMAND = "/list";
+    final static String DELETE_COMMAND = "/delete";
+    final static String EXPORT_COMMAND = "/export";
 
-    @Override
-    public String getBotToken() {
-        return "7280055119:AAEOgJ2Pcqx5uRNLJKPgmoz0YiqUgXQNe1Q"; // Bot token
+
+    public BookBot(String botToken) {
+        super(botToken);
     }
 
     @Override
     public void onUpdateReceived(Update update) {
+
         if (update.hasMessage() && update.getMessage().hasText()) {
             Message message = update.getMessage();
             String text = message.getText();
@@ -42,41 +43,26 @@ public class BookBot extends TelegramLongPollingBot {
             if (text.equals("/start")) {
                 sendMainMenu(message.getChatId());
             } else {
+
+
                 switch (text.split(" ")[0]) {
-                    case "/add" -> handleAddBook(message);
-                    case "/list" -> handleListBooks(message);
-                    case "/delete" -> handleDeleteBook(message);
-                    case "/export" -> handleExportBooks(message);
+                    case ADD_COMMAND -> handleAddBook(message);
+                    case LIST_COMMAND -> handleListBooks(message);
+                    case DELETE_COMMAND -> handleDeleteBook(message);
+                    case EXPORT_COMMAND -> handleExportBooks(message);
                     default -> sendMainMenu(message.getChatId());
                 }
             }
         }
     }
 
-    // Main menu with buttons
     private void sendMainMenu(Long chatId) {
         SendMessage message = new SendMessage();
         message.setChatId(chatId.toString());
         message.setText("Kitoblar botiga xush kelibsiz! Quyidagi amallardan birini tanlang:");
 
-        ReplyKeyboardMarkup keyboardMarkup = new ReplyKeyboardMarkup();
-        keyboardMarkup.setResizeKeyboard(true);
-
-        List<KeyboardRow> keyboardRows = new ArrayList<>();
-
-        KeyboardRow row1 = new KeyboardRow();
-        row1.add(new KeyboardButton("/add Kitob qo'shish"));
-        row1.add(new KeyboardButton("/list Kitoblar ro'yxati"));
-
-        KeyboardRow row2 = new KeyboardRow();
-        row2.add(new KeyboardButton("/delete Kitob o'chirish"));
-        row2.add(new KeyboardButton("/export JSON eksport"));
-
-        keyboardRows.add(row1);
-        keyboardRows.add(row2);
-
-        keyboardMarkup.setKeyboard(keyboardRows);
-        message.setReplyMarkup(keyboardMarkup);
+        ReplyKeyboardMarkup markup = MakeButtons.makeReplyBtn();
+        message.setReplyMarkup(markup);
 
         try {
             execute(message);
@@ -92,7 +78,7 @@ public class BookBot extends TelegramLongPollingBot {
             return;
         }
 
-        String name = parts[0].replace("/add", "").trim();
+        String name = parts[0].replace(ADD_COMMAND, "").trim();
         String authors = parts[1].trim();
         String genre = parts[2].trim();
 
@@ -106,8 +92,6 @@ public class BookBot extends TelegramLongPollingBot {
             sendMessage(message.getChatId(), "Narx raqamini to'g'ri kiriting.");
         }
     }
-
-
 
 
     private void handleListBooks(Message message) {
@@ -174,5 +158,10 @@ public class BookBot extends TelegramLongPollingBot {
         } catch (TelegramApiException e) {
             e.printStackTrace();
         }
+    }
+
+    @Override
+    public String getBotUsername() {
+        return "Your_Bot_Username";
     }
 }
